@@ -2,19 +2,17 @@
 * in your own words. explain the four principle for the "this" keyword below.
 *
 * 1. Window/Global Object Binding
-      When in the global scope, the value of `this` will be the window/console object. 
-      Ex:
-      function rideBike(bike) {
-        console.log(this)
-        return bike
-      }
-      rideBike('KTM')
+     When in the global scope, the value of `this` will be the window/console object. 
 
 * 2. Implicit Binding
+     Implicit binding is just referring to the object to the left of the dot notation.  
+
 
 * 3. New Binding
+     Whenever you use a constructor function to create a new Object, `this` will refer to the object that was created
 
 * 4. Explicit Binding
+     Explicit binding is used when call, apply, or bind are used on an object.
 *
 * write out a code example of each explanation above
 */
@@ -34,11 +32,10 @@ sayBike("KTM");
 const myObj = {
   greeting: 'Hello',
   sayHello: function(name) {
-    console.log(`${this.greeting} my name is ${name}`);
-    console.log(this);
+    return `${this.greeting} my name is ${name}`
   }
 };
-myObj.sayHello('Ryan');
+console.log(myObj.sayHello('Jamelle'))
 
 // Principle 3
 
@@ -55,7 +52,7 @@ function CordialPerson(greeter) {
 const jerry = new CordialPerson('Newman');
 const newman = new CordialPerson('Jerry');
 
-newman.speak();
+jerry.speak();
 newman.speak();
 
 // Principle 4
